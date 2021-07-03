@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class InputSystem : IEcsRunSystem
 {
-    GameObject _tower;
+    private EcsFilter<TowerComponent> _filter;
+    private SceneObjects _sceneObjects;
     public void Run()
     {
-        if(Input.GetMouseButtonDown(0))
+        foreach (var i in _filter)
         {
-            var a = GameObject.FindObjectOfType<TowerBehaviour>();
-            a.Entity.Get<DragTowerComponent>();
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                _sceneObjects.Tower.Entity.Get<DragTowerComponent>();
+            }
 
-        if(Input.GetMouseButtonUp(0))
-        {
-            var a = GameObject.FindObjectOfType<TowerBehaviour>();
-            a.Entity.Del<DragTowerComponent>();
+            if (Input.GetMouseButtonUp(0))
+            {
+                _sceneObjects.Tower.Entity.Del<DragTowerComponent>();
+            }
         }
     }
 }

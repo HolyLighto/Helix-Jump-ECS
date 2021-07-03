@@ -12,7 +12,6 @@ public class ScoreTakeSystem : IEcsRunSystem
         foreach(var i in _addScoreFilter)
         {
             ref var scoreComponent = ref _addScoreFilter.Get1(i);
-            //ref var scoreTakeComponent = ref _addScoreFilter.Get2(i);
 
             if (scoreComponent.Combo > 0)
             {

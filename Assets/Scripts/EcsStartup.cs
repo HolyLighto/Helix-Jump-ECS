@@ -28,9 +28,13 @@ namespace Client {
                 .Add(new InputSystem())
                 .Add(new CameraFollowSystem())
                 .Add(new ScoreTakeSystem())
+                .Add(new ScoreUISystem())
+                .Add(new ShowMenuSystem())
 
+                .OneFrame<ShowMenuComponent>()
                 .OneFrame<ScoreTakeComponent>()
                 .OneFrame<ScoreComboComponent>()
+                
 
 
                 // inject service instances here (order doesn't important), for example:

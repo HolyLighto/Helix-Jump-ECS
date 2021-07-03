@@ -26,8 +26,25 @@ public class BallBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _score.Entity.Get<ScoreComboComponent>();
-        Debug.Log("triggered");
+        if (other.CompareTag("End"))
+        {
+            _score.Entity.Get<ScoreComboComponent>();
+            _score.Entity.Get<ScoreTakeComponent>();
+
+            var tower = other.GetComponentInParent<TowerBehaviour>();
+            tower.Entity.Del<TowerComponent>();
+            _ballEntity.Get<ShowMenuComponent>();
+
+            var rb = GetComponent<Rigidbody>();
+            rb.isKinematic = true;
+            _ballEntity.Del<BallComponent>();
+            Debug.Log("ENDED");
+        }
+        else
+        {
+            _score.Entity.Get<ScoreComboComponent>();
+            Debug.Log("triggered");
+        }
 
     }
 }

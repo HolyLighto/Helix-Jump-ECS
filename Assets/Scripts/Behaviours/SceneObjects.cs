@@ -7,6 +7,7 @@ public class SceneObjects : MonoBehaviour
     public BallBehaviour Ball;
     public TowerBehaviour Tower;
     public ScoreBehaviour Score;
+    public GameObject UiPanel;
     void Start()
     {
         Ball = GameObject.FindObjectOfType<BallBehaviour>();

@@ -115,7 +115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676862134436221851}
   m_LocalRotation: {x: -0.000000029802322, y: 0.67521507, z: -0.000000059604645, w: 0.73762095}
-  m_LocalPosition: {x: 0, y: 0.9999995, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 0.20000002, z: 1}
   m_Children:
   - {fileID: 1889000394684551451}
@@ -1236,8 +1236,8 @@ GameObject:
   - component: {fileID: 8072816816546338426}
   - component: {fileID: 4571736011914692259}
   m_Layer: 0
-  m_Name: ScoreTake
-  m_TagString: Untagged
+  m_Name: End
+  m_TagString: End
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
