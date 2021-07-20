@@ -22,6 +22,7 @@ public class InitGameSystem : IEcsInitSystem
         ballComponent.BallModel = Object.Instantiate(_prefabs.BallPrefab, new Vector3(0,mesh.bounds.size.y/2, 0), Quaternion.identity);
         ballComponent.BallModel.GetComponent<BallBehaviour>().BallEntity = ball;
         ballComponent.Speed = 15f;
+        ballComponent.Rigidbody = ballComponent.BallModel.GetComponent<Rigidbody>();
 
         var score = _world.NewEntity();
         ref var scoreComponent = ref score.Get<ScoreComponent>();

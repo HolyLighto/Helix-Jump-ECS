@@ -6,4 +6,5 @@ public struct BallComponent
 {
     public GameObject BallModel;
     public float Speed;
+    public Rigidbody Rigidbody;
 }

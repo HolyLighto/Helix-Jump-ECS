@@ -20,8 +20,19 @@ public class BallBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        _ballEntity.Get<BallCollisionComponent>();
-        _score.Entity.Get<ScoreTakeComponent>();
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            if (_ballEntity.Has<ArrowComponent>())
+            {
+                collision.gameObject.GetComponentInChildren<FloorTriggerBehaviour>().SuccessCollision();
+                _score.Entity.Get<ScoreComboComponent>();
+            }
+            else
+            {
+                _ballEntity.Get<BallCollisionComponent>();
+                _score.Entity.Get<ScoreTakeComponent>();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)

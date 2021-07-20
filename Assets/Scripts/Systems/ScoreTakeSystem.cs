@@ -17,7 +17,7 @@ public class ScoreTakeSystem : IEcsRunSystem
             {
                 scoreComponent.CurrentScore += (scoreComponent.BaseScoreValue * (int)Mathf.Pow(scoreComponent.Combo, 2)) ;
                 scoreComponent.Combo = 0;
-                Debug.Log("CURRENT SCORE: " + scoreComponent.CurrentScore);
+                //Debug.Log("CURRENT SCORE: " + scoreComponent.CurrentScore);
             }
         }
 

@@ -30,10 +30,13 @@ namespace Client {
                 .Add(new ScoreTakeSystem())
                 .Add(new ScoreUISystem())
                 .Add(new ShowMenuSystem())
+                .Add(new FloorExposionSystem())
+                
 
                 .OneFrame<ShowMenuComponent>()
                 .OneFrame<ScoreTakeComponent>()
                 .OneFrame<ScoreComboComponent>()
+                .OneFrame<FloorExposionComponent>()
                 
 
 
@@ -45,6 +48,7 @@ namespace Client {
 
             _fixedUpdateSystems
                 .Add(new BallJumpSystem())
+                .Add(new BallGravitySystem())
                 .OneFrame<BallCollisionComponent>()
                 .Init();
         }
