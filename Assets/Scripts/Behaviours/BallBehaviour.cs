@@ -22,12 +22,12 @@ public class BallBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            if (_ballEntity.Has<ArrowComponent>())
-            {
-                collision.gameObject.GetComponentInChildren<FloorTriggerBehaviour>().SuccessCollision();
-                _score.Entity.Get<ScoreComboComponent>();
-            }
-            else
+            //if (_ballEntity.Has<ArrowComponent>())
+            //{
+            //    collision.gameObject.GetComponentInChildren<FloorTriggerBehaviour>().SuccessCollision();
+            //    _score.Entity.Get<ScoreComboComponent>();
+            //}
+            //else
             {
                 _ballEntity.Get<BallCollisionComponent>();
                 _score.Entity.Get<ScoreTakeComponent>();
